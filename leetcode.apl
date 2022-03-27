@@ -10,8 +10,9 @@ rotateRight ← {⍵⌽⍨⍺-⍨≢⍵} ⍝ P61
 countBits ← 0,∘∊{ +⌿⍵⊤⍨⍵ 1⍴2 }¨∘⍳ ⍝ P338
 findComplement ← { 2⊥ ~ 2∘⊥⍣¯1⊢ ⍵ } ⍝ 476
 flipAndInvertImage ← ~⌽¨ ⍝ P832
-balancedStringSplit ← {+/0=+\(~-⊢)'R'=⍵} ⍝ 1221
+balancedStringSplit ← {+/0=+\(~-⊢)'R'=⍵} ⍝ P1221
 checkStraightLine ← { ∧/(1∘⌷=⊢)×-/↑2,/(⊣+¯11○⊢)/↑⍵ } ⍝ P1232
+subtractProductAndSum ← {(×/-+/)⍎¨⍕⍵} ⍝ P1281
 maximum69Number ← { 10⊥ 9@(⊃⍸6=⍎¨⍕⍵)⊢ ⍎¨⍕⍵ } ⍝ P1323
 diagonalSum ← {+/+/{⍵×(⌽∨⊢)∘.=⍨⍳≢⍵}↑⍵} ⍝ P1572
 findGCD ← ⌈/∨⌊/ ⍝ 1979
