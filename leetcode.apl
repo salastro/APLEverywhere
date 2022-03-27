@@ -30,6 +30,6 @@ replaceNonCoprimes ← { ⍝ P2197
 	⍝ remove the first element from the array
 	nums ← nums[(⍳≢nums)~arr]
 	⍝ loop until the size of the array remains the same
-	(∇⍣{(≢⍵)=≢⍺}) nums
+	(∇⍣{(≢⍵)=≢⍺}) nums ⋄
 }
 findKDistantIndices ← { ⎕IO ← 0 ⋄ (d k) ← (0⊃⍵) (1⊃⍵) ⋄ ⍸⊃∨/k=((1↓-⍳1+d),⍳1+d)∘.⌽⊂⍺ } ⍝ P2200
