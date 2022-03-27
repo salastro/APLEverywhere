@@ -13,6 +13,7 @@ flipAndInvertImage ← ~⌽¨ ⍝ P832
 checkStraightLine ← { ∧/(1∘⌷=⊢)×-/↑2,/(⊣+¯11○⊢)/↑⍵ } ⍝ P1232
 maximum69Number ← { 10⊥ 9@(⊃⍸6=⍎¨⍕⍵)⊢ ⍎¨⍕⍵ } ⍝ P1323
 diagonalSum ← {+/+/{⍵×(⌽∨⊢)∘.=⍨⍳≢⍵}↑⍵} ⍝ P1572
+findGCD ← ⌈/∨⌊/ ⍝ 1979
 findRotation ← { target ← ⍵ ⋄ mat ← ⍺ ⋄ ∨/ {∧/⊃∧/ target = (rotate ⍣ ⍵) mat }¨⍳4 } ⍝ P1886
 checkValid ← {∧/⊃∧/∨/(⍳≢⍵)∘.=⍵} ⍝ P2133
 ]dinput
