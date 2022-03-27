@@ -7,6 +7,7 @@ reverse ← { range ← (¯2*31) (1-⍨2*31) ⋄ inRange ← {⍵×≠/range<⍵
 isPalindrome ← {(¯1≠×⍵)×(⌽≡⊢)(⍎¨⍕)|⍵} ⍝ P9
 rotate ← {↓⌽⍉↑⍵} ⍝ P48
 rotateRight ← {⍵⌽⍨⍺-⍨≢⍵} ⍝ P61
+isPowerOfTwo ← { ⍵≤1:0 ⋄ (⌈=⊢)2⍟⍵ } ⍝ P231
 countBits ← 0,∘∊{ +⌿⍵⊤⍨⍵ 1⍴2 }¨∘⍳ ⍝ P338
 findComplement ← { 2⊥ ~ 2∘⊥⍣¯1⊢ ⍵ } ⍝ 476
 flipAndInvertImage ← ~⌽¨ ⍝ P832
