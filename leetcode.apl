@@ -17,6 +17,7 @@ checkStraightLine ← { ∧/(1∘⌷=⊢)×-/↑2,/(⊣+¯11○⊢)/↑⍵ } ⍝
 subtractProductAndSum ← {(×/-+/)⍎¨⍕⍵} ⍝ P1281
 maximum69Number ← { 10⊥ 9@(⊃⍸6=⍎¨⍕⍵)⊢ ⍎¨⍕⍵ } ⍝ P1323
 diagonalSum ← {+/+/{⍵×(⌽∨⊢)∘.=⍨⍳≢⍵}↑⍵} ⍝ P1572
+swapNodes ← { ( arr a b ) ← ⍺ ( ⍵⌷⌽⍺ ) ( ⍵⌷⍺ ) ⋄ arr[a b] ← b a ⋄ arr } ⍝ P1721
 findGCD ← ⌈/∨⌊/ ⍝ 1979
 findRotation ← { target ← ⍵ ⋄ mat ← ⍺ ⋄ ∨/ {∧/⊃∧/ target = (rotate ⍣ ⍵) mat }¨⍳4 } ⍝ P1886
 checkValid ← {∧/⊃∧/∨/(⍳≢⍵)∘.=⍵} ⍝ P2133
