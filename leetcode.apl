@@ -3,7 +3,7 @@
 twoSum ← { ⊃⍸⍵=(∘.≠⍨∘⍳∘≢×∘.+⍨)⍺ } ⍝ P1
 addTwoNumbers ← {⌽ ⍎¨⍕ (10⊥⍺) + 10⊥⍵} ⍝ P2
 convert ← {⊃,/(↑∨⌿¨↓↓((⍳⍺),[0.5]⌽(⍺-1)↓⍳1+r)∘.(∘.=)(r←2-⍨2×⍺)|⍳≢⍵)∘./↓⍵} ⍝ P6
-reverse ← { range ← (¯2*31) (1-⍨2*31) ⋄ inRange ← {⍵×≠/range<⍵} ⋄ (×⍵) × inRange 10⊥ ⍎¨⍕ |⍵ } ⍝ P7
+reverse ← { (×⍵) × {⍵×≠/(¯2*31) (1-⍨2*31)<⍵} 10⊥ ⍎¨⍕ |⍵ } ⍝ P7
 isPalindrome ← {(¯1≠×⍵)×(⌽≡⊢)(⍎¨⍕)|⍵} ⍝ P9
 rotate ← {↓⌽⍉↑⍵} ⍝ P48
 rotateRight ← {⍵⌽⍨⍺-⍨≢⍵} ⍝ P61
@@ -20,13 +20,12 @@ diagonalSum ← {+/+/{⍵×(⌽∨⊢)∘.=⍨⍳≢⍵}↑⍵} ⍝ P1572
 swapNodes ← { ( arr a b ) ← ⍺ ( ⍵⌷⌽⍺ ) ( ⍵⌷⍺ ) ⋄ arr[a b] ← b a ⋄ arr } ⍝ P1721
 countPoints ← { (⍳≢⍵)⌷¨+⌿¨(2↓¨⍵)≥¨⊂|(⊣+¯11○⊢)/↑⍺∘.-2↑¨⍵ } ⍝ P1828
 findGCD ← ⌈/∨⌊/ ⍝ 1979
-findRotation ← { target ← ⍵ ⋄ mat ← ⍺ ⋄ ∨/ {∧/⊃∧/ target = (rotate ⍣ ⍵) mat }¨⍳4 } ⍝ P1886
+findRotation ← { (target mat) ← ⍵ ⍺ ⋄ ∨/ {∧/⊃∧/ target = (rotate ⍣ ⍵) mat }¨⍳4 } ⍝ P1886
 checkValid ← {∧/⊃∧/∨/(⍳≢⍵)∘.=⍵} ⍝ P2133
 ]dinput
 replaceNonCoprimes ← { ⍝ P2197
-	nums ← ⍵
 	⍝ get every non-coprimes pair
-	nonCoPrimes ← { ( 2,/⍵ ) /⍨ ∧/¨0≠2{ (⍺ ⍵)×1≠∨/⍵ ⍺ }/⍵ }nums
+	nonCoPrimes ← { ( 2,/⍵ ) /⍨ ∧/¨0≠2{ (⍺ ⍵)×1≠∨/⍵ ⍺ }/⍵ } nums ← ⍵
 	⍝ if there are non, return the input
 	0=⍴nonCoPrimes:nums
 	⍝ create array with the pairs' first element's location
