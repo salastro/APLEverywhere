@@ -12,7 +12,8 @@ isPowerOfTwo ← { ⍵≤1:0 ⋄ (⌈=⊢)2⍟⍵ } ⍝ P231
 countBits ← 0,∘∊{ +⌿⍵⊤⍨⍵ 1⍴2 }¨∘⍳ ⍝ P338
 findComplement ← { 2⊥ ~ 2∘⊥⍣¯1⊢ ⍵ } ⍝ 476
 flipAndInvertImage ← ~⌽¨ ⍝ P832
-threeSumMulti ← {≢{⍵/⍨{(⍵[1]<⍵[2])∧⍵[2]<⍵[3]}¨⍵}⍸⍵=(∘.<⍨⍳≢⍺)×⍤2⊢(⍺∘(∘.+)⍣2)⍺} ⍝923
+threeSumMulti ← {≢{⍵/⍨{(⍵[1]<⍵[2])∧⍵[2]<⍵[3]}¨⍵}⍸⍵=(∘.<⍨⍳≢⍺)×⍤2⊢(⍺∘(∘.+)⍣2)⍺} ⍝ P923
+lastStoneWeight ← { 1=≢⍵:⍵ ⋄ ∇ (sorted[1]-sorted[2]),2↓sorted ← ⍵[⌽⍋⍵] } ⍝ P1046
 balancedStringSplit ← {+/0=+\(~-⊢)'R'=⍵} ⍝ P1221
 checkStraightLine ← { ∧/(1∘⌷=⊢)×-/↑2,/(⊣+¯11○⊢)/↑⍵ } ⍝ P1232
 subtractProductAndSum ← {(×/-+/)⍎¨⍕⍵} ⍝ P1281
