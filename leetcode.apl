@@ -16,7 +16,7 @@ threeSumMulti ← {≢{⍵/⍨{(⍵[1]<⍵[2])∧⍵[2]<⍵[3]}¨⍵}⍸⍵=(∘
 lastStoneWeight ← { 1=≢⍵:⍵ ⋄ ∇ (sorted[1]-sorted[2]),2↓sorted ← ⍵[⌽⍋⍵] } ⍝ P1046
 balancedStringSplit ← {+/0=+\(~-⊢)'R'=⍵} ⍝ P1221
 checkStraightLine ← { ∧/(1∘⌷=⊢)×-/↑2,/(⊣+¯11○⊢)/↑⍵ } ⍝ P1232
-shiftGrid ← { { shifted ← (¯1)⌽↑⍵ ⋄ shifted[;1] ← (¯1)⌽shifted[;1] ⋄ shifted }⍣⍺⊢⍵ } ⍝ P1260
+shiftGrid ← { { shifted ← ¯1⌽↑⍵ ⋄ shifted[;1] ← ¯1⌽shifted[;1] ⋄ shifted }⍣⍺⊢⍵ } ⍝ P1260
 subtractProductAndSum ← {(×/-+/)⍎¨⍕⍵} ⍝ P1281
 maximum69Number ← { 10⊥ 9@(⊃⍸6=⍎¨⍕⍵)⊢ ⍎¨⍕⍵ } ⍝ P1323
 diagonalSum ← {+/+/{⍵×(⌽∨⊢)∘.=⍨⍳≢⍵}↑⍵} ⍝ P1572
